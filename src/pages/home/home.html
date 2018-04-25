@@ -1,14 +1,24 @@
 <ion-header>
-  <ion-navbar>
+    <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+        Couriers
     </ion-title>
+        <ion-buttons end>
+            <button navPush="AddCourierPage" ion-button>
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+        <ion-list-header>
+            Couriers
+        </ion-list-header>
+        <ion-item *ngFor="let courier of courierList$ | async" detail-push navPush="EditCourierPage"
+                  [navParams]="{courier: courier}">
+            {{courier.name}}
+        </ion-item>
+    </ion-list>
 </ion-content>

@@ -1,0 +1,30 @@
+<!--
+  Generated template for the AddCourierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Add Courier</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input [(ngModel)]="courier.name" placeholder="Ricardo Silva"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Mobile Number</ion-label>
+        <ion-input [(ngModel)]="courier.mobile" type="number" placeholder="918541474"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>NIF</ion-label>
+        <ion-input [(ngModel)]="courier.nif" type="number" placeholder="231450321"></ion-input>
+    </ion-item>
+    <button ion-button block clear (click)="addCourier(courier)">Add</button>
+</ion-content>
