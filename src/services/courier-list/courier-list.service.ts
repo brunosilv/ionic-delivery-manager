@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {AngularFireDatabase} from "angularfire2/database";
-import {Courier} from "../../modals/courier/courier.model";
+import {Courier} from "../../models/courier/courier.model";
 
 
 @Injectable()

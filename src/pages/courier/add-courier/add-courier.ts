@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Courier} from "../../modals/courier/courier.model";
-import {CourierListService} from "../../services/courier-list/courier-list.service";
-import {ToastService} from "../../services/toast/toast.service";
+import {Courier} from "../../../models/courier/courier.model";
+import {CourierListService} from "../../../services/courier-list/courier-list.service";
+import {ToastService} from "../../../services/toast/toast.service";
 
 /**
  * Generated class for the AddCourierPage page.

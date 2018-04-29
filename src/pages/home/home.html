@@ -1,24 +1,53 @@
 <ion-header>
     <ion-navbar color="primary">
     <ion-title>
-        Couriers
+        EasyGest
     </ion-title>
         <ion-buttons end>
-            <button navPush="AddCourierPage" ion-button>
-                <ion-icon name="add"></ion-icon>
+            <button (click)="logOutUser()" ion-button>
+                <ion-icon name="power"></ion-icon>
+            </button>
+            <button navPush="ProfilePage" ion-button>
+                <ion-icon name="person"></ion-icon>
             </button>
         </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-list>
-        <ion-list-header>
-            Couriers
-        </ion-list-header>
-        <ion-item *ngFor="let courier of courierList$ | async" detail-push navPush="EditCourierPage"
-                  [navParams]="{courier: courier}">
-            {{courier.name}}
-        </ion-item>
-    </ion-list>
+<ion-content class="card-background-page">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-auto>
+                <ion-card>
+                    <img src="http://www.thewalkmagazine.com/wp-content/uploads/2018/04/glaucous.png"/>
+                    <div class="card-title">Clients</div>
+                    <div class="card-subtitle">41 Clients</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-auto>
+                <ion-card>
+                    <img src="http://www.thewalkmagazine.com/wp-content/uploads/2018/04/glaucous.png"/>
+                    <div class="card-title">Users</div>
+                    <div class="card-subtitle">5 Active Users</div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-auto>
+                <ion-card>
+                    <img class="card-img"
+                         src="http://www.moselle.fr/SiteCollectionImages/Images/VivrelaMoselle/Mobilite/routes/routes_2013_01_800.jpg"/>
+                    <div class="card-title">Routes</div>
+                    <div class="card-subtitle">5 Routes</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-auto>
+                <ion-card>
+                    <img src="http://www.thewalkmagazine.com/wp-content/uploads/2018/04/glaucous.png"/>
+                    <div class="card-title">All couriers</div>
+                    <div class="card-subtitle">4 Active Couriers</div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

@@ -10,6 +10,7 @@ import {FIREBASE_CONFIG} from "./firebase.credentials";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {CourierListService} from "../services/courier-list/courier-list.service";
 import {ToastService} from "../services/toast/toast.service";
+import {AngularFireAuthModule} from "angularfire2/auth";
 
 @NgModule({
     declarations: [MyApp],
@@ -18,6 +19,7 @@ import {ToastService} from "../services/toast/toast.service";
       IonicModule.forRoot(MyApp),
       AngularFireModule.initializeApp(FIREBASE_CONFIG),
       AngularFireDatabaseModule,
+      AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

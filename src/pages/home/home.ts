@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-import {CourierListService} from "../../services/courier-list/courier-list.service";
-import {Observable} from "rxjs/Observable";
-import {Courier} from "../../modals/courier/courier.model";
+
+import {AngularFireAuth} from "angularfire2/auth";
+import {ToastService} from "../../services/toast/toast.service";
+
+import {AngularFireDatabase} from "angularfire2/database";
 
 @IonicPage()
 @Component({
@@ -11,19 +13,14 @@ import {Courier} from "../../modals/courier/courier.model";
 })
 export class HomePage {
 
-    courierList$: Observable<Courier[]>;
 
-    constructor(public navCtrl: NavController, private couries: CourierListService) {
-        this.courierList$ = this.couries
-            .getCourierList() //Lista da BD
-            .snapshotChanges() // Key e value
-            .map(
-                changes => {
-                    return changes.map(c => ({
-                        key: c.payload.key, ...c.payload.val()
-                    }))
-                }
-            );
+    constructor(public navCtrl: NavController, private afDatabase: AngularFireDatabase, private afAuth: AngularFireAuth, private toast: ToastService) {
     }
 
+
+    logOutUser() {
+        this.afAuth.auth.signOut();
+        this.toast.show(`${this.afAuth.auth.currentUser.email} logged out!`, 5000);
+        this.navCtrl.setRoot('LoginPage')
+    }
 }
